@@ -1,0 +1,6 @@
+# Build outputs (rebuild with Divine, see README)
+*.pak
+nexus/*.zip
+
+# Larian game asset extracted for the preview; not redistributed
+art/Spell_Evocation_Light.png

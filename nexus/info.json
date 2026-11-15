@@ -1,0 +1,16 @@
+{
+  "Mods": [
+    {
+      "Author": "Sylvanas Cry",
+      "Name": "Light Off",
+      "Folder": "LightOff",
+      "Version": "36028799166447616",
+      "Description": "A free Douse Light action that removes the Light cantrip from your equipped weapons.",
+      "UUID": "20a56c3c-2d83-456c-a68d-0afd2eccb566",
+      "Created": "2026-11-15T19:07:40+00:00",
+      "Dependencies": [],
+      "Group": "20a56c3c-2d83-456c-a68d-0afd2eccb566"
+    }
+  ],
+  "MD5": ""
+}

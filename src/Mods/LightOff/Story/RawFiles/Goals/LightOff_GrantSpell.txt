@@ -1,0 +1,27 @@
+Version 1
+SubGoalCombiner SGC_AND
+INITSECTION
+
+KBSECTION
+
+// Every party member gets the free Douse Light shout: on each level load and when someone joins.
+
+IF
+LevelGameplayStarted(_, _)
+AND
+DB_Players((CHARACTER)_Char)
+AND
+HasSpell(_Char, "Shout_LightOff", 0)
+THEN
+AddSpell(_Char, "Shout_LightOff", 0, 1);
+
+IF
+CharacterJoinedParty((CHARACTER)_Char)
+AND
+HasSpell(_Char, "Shout_LightOff", 0)
+THEN
+AddSpell(_Char, "Shout_LightOff", 0, 1);
+
+EXITSECTION
+
+ENDEXITSECTION

@@ -1,0 +1,30 @@
+// Douse Light: a free shout that removes the Light cantrip from the caster's equipped weapons.
+// Vanilla Light lands on the main-hand weapon (ApplyEquipmentStatus(MainHand,LIGHT)), so the
+// spell hits every weapon slot with a zero-duration remover, the same way vanilla's own
+// item-light toggles do it (MAG_MAGIC_ITEM_LIGHT_REMOVER). Item lights with their own toggle
+// (MAG_LIGHT_DIVINE) are left alone so their toggle stays in sync.
+
+new entry "Shout_LightOff"
+type "SpellData"
+data "SpellType" "Shout"
+data "SpellProperties" "RemoveStatus(LIGHT);ApplyEquipmentStatus(MeleeMainHand,LIGHTOFF_REMOVER,100,0);ApplyEquipmentStatus(MeleeOffHand,LIGHTOFF_REMOVER,100,0);ApplyEquipmentStatus(RangedMainHand,LIGHTOFF_REMOVER,100,0);ApplyEquipmentStatus(RangedOffHand,LIGHTOFF_REMOVER,100,0)"
+data "TargetConditions" "Self()"
+data "RequirementConditions" "HasStatus('LIGHT', context.Source) or HasStatus('LIGHT', GetItemInEquipmentSlot(EquipmentSlot.MeleeMainHand, context.Source)) or HasStatus('LIGHT', GetItemInEquipmentSlot(EquipmentSlot.MeleeOffHand, context.Source)) or HasStatus('LIGHT', GetItemInEquipmentSlot(EquipmentSlot.RangedMainHand, context.Source)) or HasStatus('LIGHT', GetItemInEquipmentSlot(EquipmentSlot.RangedOffHand, context.Source))"
+data "Icon" "Spell_Evocation_Light"
+data "DisplayName" "h6e54f874g238dg474ag8bafg36414423f4f1;1"
+data "Description" "h5dff41d7g3deag46c5g892cg8b8a9f2f39b0;1"
+data "CastTextEvent" "Cast"
+data "SpellAnimation" "d7745165-66e4-41c4-9e42-d09d95a29491,,;,,;fd5e6365-f314-42e8-a39b-a041dc56b0e7,,;721abca5-2d52-4317-82a3-2a2e970a7a16,,;ce773016-6fb4-44fe-84db-e037aaa22041,,;,,;,,;,,;,,"
+data "VerbalIntent" "Utility"
+data "SpellActionType" "Dismiss"
+data "SpellAnimationIntentType" "Peaceful"
+// SNEAKING ends on OnAttack (any cast) unless the spell has the Stealth flag; Invisible does
+// the same for invisibility. Jump uses the same pair.
+data "SpellFlags" "IgnoreSilence;Stealth;Invisible"
+
+new entry "LIGHTOFF_REMOVER"
+type "StatusData"
+data "StatusType" "BOOST"
+data "StackId" "LIGHTOFF_REMOVER"
+data "StatusPropertyFlags" "DisableOverhead;DisableCombatlog;DisablePortraitIndicator"
+data "OnApplyFunctors" "RemoveStatus(LIGHT)"

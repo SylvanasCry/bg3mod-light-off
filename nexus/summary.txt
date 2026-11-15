@@ -1,0 +1,1 @@
+Adds a free Douse Light action that removes the Light cantrip from your equipped weapons. Keeps stealth, works in combat and while silenced, no Script Extender needed.
