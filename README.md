@@ -5,7 +5,7 @@ A free **Douse Light** action for every party member. It removes the Light cantr
 a stealthy character. No Script Extender needed.
 
 Published on Nexus Mods on 2026-11-15: https://www.nexusmods.com/baldursgate3/mods/26670
-(v1.0.1, category Gameplay, tagged AI-Generated Content and AI Media).
+(v1.0.2 since 2026-11-21, category Gameplay, tagged AI-Generated Content and AI Media).
 
 Author: Sylvanas Cry (Nexus: SylvanasCry). Mod UUID: `20a56c3c-2d83-456c-a68d-0afd2eccb566`.
 No dependencies.
@@ -71,4 +71,6 @@ spell has `SpellFlags.Stealth` (vanilla `RemoveConditions`). v1.0.1 adds
 in game on 2026-11-15: after Light → Hide → Douse Light, the character stays in stealth.
 
 v1.0.2 adds a Ukrainian localization (`Localization/Ukrainian`) and fixes the Russian word
-for cantrip («фокус», as in the game, not «заговор»). Not checked in game yet.
+for cantrip («фокус», as in the game, not «заговор»). Verified in game on 2026-11-21 after
+a Vortex update from Nexus: both tooltips show the new text. Loading a 1.0.1 save shows a
+version mismatch dialog; continue with the checkbox, do not press Downgrade.
