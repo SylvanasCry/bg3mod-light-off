@@ -11,7 +11,7 @@ Author: Sylvanas Cry (Nexus: SylvanasCry). Mod UUID: `20a56c3c-2d83-456c-a68d-0a
 No dependencies.
 
 Release files are in `nexus/`:
-- `LightOff-<version>.zip` holds the pak and `info.json` for BG3 Mod Manager. It is built
+- `LightOff.zip` holds the pak and `info.json` for BG3 Mod Manager. It is built
   locally and not committed; download it from Nexus.
 - `description.bbcode` and `summary.txt` are the texts for the Nexus page.
 - `art/make_preview.py` builds the preview image for the Nexus page. It needs Pillow and
@@ -69,3 +69,6 @@ v1.0.0 broke stealth: `SNEAKING` ends on `OnAttack`, which any cast raises, unle
 spell has `SpellFlags.Stealth` (vanilla `RemoveConditions`). v1.0.1 adds
 `SpellFlags "IgnoreSilence;Stealth;Invisible"`, the same flags vanilla Jump uses. Verified
 in game on 2026-11-15: after Light → Hide → Douse Light, the character stays in stealth.
+
+v1.0.2 adds a Ukrainian localization (`Localization/Ukrainian`) and fixes the Russian word
+for cantrip («фокус», as in the game, not «заговор»). Not checked in game yet.
